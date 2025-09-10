@@ -1,0 +1,114 @@
+plugins {
+    id 'idea'
+    id 'java-library'
+    id "com.vanniktech.maven.publish" version "0.34.0"
+}
+
+repositories {
+    maven { url = uri("https://maven.aliyun.com/repository/public") }
+    mavenCentral()
+}
+
+java {
+    javadoc {
+        options.encoding = "UTF-8"
+    }
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    // Hutool Core
+    implementation group: 'cn.hutool', name: 'hutool-core', version: '5.8.40'
+
+    // Hutool JSON
+    implementation group: 'cn.hutool', name: 'hutool-json', version: '5.8.40'
+
+    // Apache FreeMarker
+    implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.34'
+
+    // CommonMark Java Core
+    implementation group: 'org.commonmark', name: 'commonmark', version: '0.25.1'
+
+    // CommonMark Java Extension For Tables
+    implementation group: 'org.commonmark', name: 'commonmark-ext-gfm-tables', version: '0.25.1'
+
+    // HTML Compressor and Minifier
+    implementation group: 'com.googlecode.htmlcompressor', name: 'htmlcompressor', version: '1.5.2'
+
+    // YUI Compressor
+    implementation group: 'com.yahoo.platform.yui', name: 'yuicompressor', version: '2.4.8'
+
+    // Jsoup Java HTML Parser
+    implementation group: 'org.jsoup', name: 'jsoup', version: '1.21.2'
+
+    // Project Lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
+    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
+    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
+
+    // TestNG
+    testImplementation group: 'org.testng', name: 'testng', version: '7.5.1'
+}
+
+// 单元测试
+test {
+    useTestNG {
+        includeGroups 'apiResolver', 'generator'
+    }
+}
+
+// 版本
+version = "2.0.0-SNAPSHOT"
+
+// 生成胖jar包
+tasks.withType(Jar) {
+    description '生成胖jar包'
+    archiveVersion = project.version
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from sourceSets.main.output
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+}
+
+import com.vanniktech.maven.publish.JavaLibrary
+import com.vanniktech.maven.publish.JavadocJar
+
+// 发布
+// 本地发布：gradlew publishToMavenLocal
+// Maven中央库发布：gradlew publishToMavenCentral
+mavenPublishing {
+    coordinates("io.github.dfengwei", "api-doc", version)
+    configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
+    pom {
+        name = "api-doc"
+        description = "基于java的接口文档生成工具"
+        inceptionYear = "2025"
+        url = "https://github.com/dfengwei/api-doc"
+        licenses {
+            license {
+                name = 'MIT License'
+                url = 'https://opensource.org/license/mit'
+            }
+        }
+        developers {
+            developer {
+                id = 'dfengwei'
+                email = 'dfengwei@163.com'
+            }
+        }
+        scm {
+            connection = 'scm:git:git://github.com/dfengwei/api-doc.git'
+            developerConnection = 'scm:git:ssh://github.com/dfengwei/api-doc.git'
+            url = 'https://github.com/dfengwei/api-doc.git'
+        }
+    }
+}
+
+// 编译时，使用UTF-8编码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}

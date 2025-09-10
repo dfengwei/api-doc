@@ -1,0 +1,73 @@
+@layer components {
+    /*body*/
+    body {@apply font-sans bg-gray-100 text-slate-600 h-screen flex overflow-hidden;}
+
+    /*导航*/
+    #aside {@apply flex flex-col gap-1 w-52 xl:w-64 2xl:w-80 shadow-md;}
+
+    /*终端导航*/
+    #terminal-nav {@apply flex-none flex flex-wrap p-2 gap-x-2 gap-y-1 bg-white shadow;}
+    #terminal-nav label {@apply flex-none flex space-x-2;}
+    #terminal-nav label span {@apply text-base font-semibold;}
+
+    /*主导航*/
+    #main-nav {@apply flex-1 p-1 bg-white shadow overflow-auto;}
+    #main-nav ul.terminal {@apply border-l-2 border-violet-400 rounded;}
+    #main-nav ul ul, #aside ul ul ul, #aside ul ul ul ul, #aside ul ul ul ul ul {@apply ml-4;}
+    #main-nav li.md.doc {@apply bg-orange-100 hover:bg-orange-200;}
+    #main-nav li.md.terminal {@apply bg-violet-100 hover:bg-violet-200;}
+    #main-nav li.md {@apply my-1 cursor-pointer rounded;}
+    #main-nav li.md a {@apply block pl-2 py-0.5;}
+    #main-nav li.group .title {@apply flex cursor-default my-1 pl-2 py-0.5 bg-gray-100 hover:bg-gray-200 rounded;}
+    #main-nav li.group .title .text {@apply flex-1;}
+    #main-nav li.group .title .arrow {@apply flex-none after:content-['∧'] px-2 cursor-pointer hover:bg-gray-300 rounded;}
+    #main-nav li.group .title .arrow.expended {@apply flex-none after:content-['∨'] transition duration-200;}
+    #main-nav .apis {@apply flex flex-wrap gap-1;}
+    #main-nav .api {@apply flex-none text-sm text-blue-800 bg-blue-100 hover:bg-blue-200 px-2 py-0.5 rounded cursor-pointer;}
+    #main-nav .api.selected {@apply bg-blue-800 text-white font-bold;}
+
+    /*主体*/
+    #main {@apply flex-1 overflow-auto }
+
+    /*Markdown的容器*/
+    #main .mds-1 {@apply w-full grid px-2 pt-2 gap-2 grid-cols-1}
+    #main .mds-2 {@apply w-full grid px-2 pt-2 gap-2 grid-cols-1 min-[1600px]:grid-cols-2}
+    #main .mds-3 {@apply w-full grid px-2 pt-2 gap-2 grid-cols-1 min-[1600px]:grid-cols-2 min-[2400px]:grid-cols-3;}
+    #main .md {@apply w-full border-2 border-white p-2 space-y-2 bg-white rounded;}
+    #main .md:target {@apply border-orange-400;}
+
+    /*接口的容器*/
+    #main .apis {@apply w-full grid px-2 pt-2 gap-1 grid-cols-1 min-[1000px]:grid-cols-2 min-[1500px]:grid-cols-3 min-[2000px]:grid-cols-4;}
+    #main .api {@apply w-full p-2 space-y-1.5 bg-white rounded border-2 border-blue-300;}
+    #main .api:target {@apply border-orange-400 bg-orange-50;}
+
+    /*接口内容*/
+    #main .api .api-name {@apply text-xl;}
+    #main .api .api-name .group {@apply text-gray-500;}
+    #main .api .api-description {@apply text-yellow-600 border-l-4 pl-2;}
+    #main .api .api-addr {@apply flex gap-1;}
+    #main .api .api-get, .api-post {@apply text-white text-sm font-bold px-1 py-0.5 rounded;}
+    #main .api .api-get {@apply text-[#17B26A] bg-[#E3F6ED];}
+    #main .api .api-post {@apply text-[#EF6820] bg-[#FDEDE4];}
+    #main .api .api-url {@apply text-blue-700;}
+    #main .api .api-content {@apply border-collapse w-full bg-white;}
+    #main .api .api-content caption {@apply text-left text-lg my-1 border-l-4 pl-2;}
+    #main .api .api-content thead {@apply bg-slate-200;}
+    #main .api .api-content tbody tr {@apply even:bg-slate-50;}
+    #main .api .api-content td, .api-content th {@apply break-all border border-slate-300 px-[5px] py-[3px];}
+    #main .api .api-content tbody tr td:nth-child(1) {@apply w-20 whitespace-nowrap;}
+    #main .api .api-content tbody tr td:nth-child(2) {@apply w-16 whitespace-nowrap;}
+    #main .api .api-content tbody tr.level-1 td:nth-child(1) {@apply indent-4;}
+    #main .api .api-content tbody tr.level-2 td:nth-child(1) {@apply indent-8;}
+    #main .api .api-content tbody tr.level-3 td:nth-child(1) {@apply indent-12;}
+    #main .api .api-content tbody tr.level-4 td:nth-child(1) {@apply indent-16;}
+    #main .api .api-content .toggle {@apply font-mono text-gray-500 bg-gray-300/80 cursor-pointer px-1 rounded hover:bg-gray-400/50 after:content-['+'];}
+    #main .api .api-content .toggle.expended {@apply after:content-['-'];}
+    #main .api .api-content .field-name:not(.required) {@apply underline decoration-dashed underline-offset-2;}
+    #main .api .api-content .required {@apply underline underline-offset-2 decoration-red-700;}
+    #main .api .api-content tbody tr {@apply hover:bg-slate-200;}
+    #main .api .api-request-header {@apply text-violet-800;}
+    #main .api .api-request-param {@apply text-blue-800;}
+    #main .api .api-response-success {@apply text-green-800;}
+    #main .api .api-response-fail {@apply text-rose-800;}
+}

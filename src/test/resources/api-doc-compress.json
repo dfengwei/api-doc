@@ -1,0 +1,72 @@
+{
+  "docName": "xxx项目接口文档",
+  "htmlRenderer": {
+    "compress": true,
+    "path": "out/html"
+  },
+  "markdownRenderer": {
+    "path": "out/markdown"
+  },
+  "markdownList": [
+    {
+      "name": "全局概述",
+      "type": "HEADER",
+      "filePath": "src/test/resources/markdown/overview.md"
+    },
+    {
+      "name": "全局返回码",
+      "type": "FOOTER",
+      "filePath": "src/test/resources/markdown/return-code.md"
+    }
+  ],
+  "terminalList": [
+    {
+      "name": "APP端",
+      "scanPath": "src/test/java/com/github/dfengwei/apidoc/controller/app",
+      "markdownList": [
+        {
+          "name": "APP端-概述",
+          "type": "HEADER",
+          "filePath": "src/test/resources/markdown/app/overview.md"
+        },
+        {
+          "name": "APP端-返回码",
+          "type": "FOOTER",
+          "filePath": "src/test/resources/markdown/app/return-code.md"
+        }
+      ]
+    },
+    {
+      "name": "客户端",
+      "scanPath": "src/test/java/com/github/dfengwei/apidoc/controller/client",
+      "markdownList": [
+        {
+          "name": "客户端-概述",
+          "type": "HEADER",
+          "filePath": "src/test/resources/markdown/client/overview.md"
+        },
+        {
+          "name": "客户端-返回码",
+          "type": "FOOTER",
+          "filePath": "src/test/resources/markdown/client/return-code.md"
+        }
+      ]
+    },
+    {
+      "name": "WEB端",
+      "scanPath": "src/test/java/com/github/dfengwei/apidoc/controller/web",
+      "markdownList": [
+        {
+          "name": "WEB端-概述",
+          "type": "HEADER",
+          "filePath": "src/test/resources/markdown/web/overview.md"
+        },
+        {
+          "name": "WEB端-返回码",
+          "type": "FOOTER",
+          "filePath": "src/test/resources/markdown/web/return-code.md"
+        }
+      ]
+    }
+  ]
+}
