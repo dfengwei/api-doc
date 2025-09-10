@@ -61,7 +61,7 @@
     #main .api .api-content tbody tr.level-2 td:nth-child(1) {@apply indent-8;}
     #main .api .api-content tbody tr.level-3 td:nth-child(1) {@apply indent-12;}
     #main .api .api-content tbody tr.level-4 td:nth-child(1) {@apply indent-16;}
-    #main .api .api-content .toggle {@apply font-mono text-gray-500 bg-gray-300/80 cursor-pointer px-1 rounded hover:bg-gray-400/50 after:content-['+'];}
+    #main .api .api-content .toggle {@apply font-mono text-gray-500 bg-gray-300/80 cursor-pointer ml-1 px-1 rounded hover:bg-gray-400/50 after:content-['+'];}
     #main .api .api-content .toggle.expended {@apply after:content-['-'];}
     #main .api .api-content .field-name:not(.required) {@apply underline decoration-dashed underline-offset-2;}
     #main .api .api-content .required {@apply underline underline-offset-2 decoration-red-700;}

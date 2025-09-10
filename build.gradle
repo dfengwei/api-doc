@@ -60,7 +60,7 @@ test {
 }
 
 // 版本
-version = "2.0.0-SNAPSHOT"
+version = "2.0.0"
 
 // 生成胖jar包
 tasks.withType(Jar) {

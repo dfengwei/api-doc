@@ -22,8 +22,7 @@
 <#macro renderRequestParam requestParam level key>
     <tr class="level-${level}" data-key="${key}">
         <td>
-            <span class="field-name<#if requestParam.required> required</#if>">${requestParam.name}</span>
-            <#if requestParam.children?has_content><span class="toggle expended"></span></#if>
+            <span class="field-name<#if requestParam.required> required</#if>">${requestParam.name}</span><#if requestParam.children?has_content><span class="toggle expended"></span></#if>
         </td>
         <td>${requestParam.dataType}</td>
         <td>${requestParam.description}</td>
@@ -43,8 +42,7 @@
 <#macro renderResponseSuccess responseSuccess level key>
     <tr class="level-${level}" data-key="${key}">
         <td>
-            <span class="field-name<#if responseSuccess.required> required</#if>">${responseSuccess.name}</span>
-            <#if responseSuccess.children?has_content><span class="toggle expended"></span></#if>
+            <span class="field-name<#if responseSuccess.required> required</#if>">${responseSuccess.name}</span><#if responseSuccess.children?has_content><span class="toggle expended"></span></#if>
         </td>
         <td>${responseSuccess.dataType}</td>
         <td>${responseSuccess.description}</td>
@@ -64,8 +62,7 @@
 <#macro renderResponseFail responseFail level key>
     <tr class="level-${level}" data-key="${key}">
         <td>
-            <span class="field-name<#if responseFail.required> required</#if>">${responseFail.name}</span>
-            <#if responseFail.children?has_content><span class="toggle expended"></span></#if>
+            <span class="field-name<#if responseFail.required> required</#if>">${responseFail.name}</span><#if responseFail.children?has_content><span class="toggle expended"></span></#if>
         </td>
         <td>${responseFail.dataType}</td>
         <td>${responseFail.description}</td>
