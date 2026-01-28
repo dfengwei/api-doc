@@ -1,7 +1,7 @@
 plugins {
     id 'idea'
     id 'java-library'
-    id "com.vanniktech.maven.publish" version "0.34.0"
+    id "com.vanniktech.maven.publish" version "0.36.0"
 }
 
 repositories {
@@ -19,37 +19,37 @@ java {
 
 dependencies {
     // Hutool Core
-    implementation group: 'cn.hutool', name: 'hutool-core', version: '5.8.40'
+    implementation 'cn.hutool:hutool-core:5.8.43'
 
     // Hutool JSON
-    implementation group: 'cn.hutool', name: 'hutool-json', version: '5.8.40'
+    implementation 'cn.hutool:hutool-json:5.8.43'
 
     // Apache FreeMarker
-    implementation group: 'org.freemarker', name: 'freemarker', version: '2.3.34'
+    implementation 'org.freemarker:freemarker:2.3.34'
 
     // CommonMark Java Core
-    implementation group: 'org.commonmark', name: 'commonmark', version: '0.25.1'
+    implementation 'org.commonmark:commonmark:0.27.1'
 
     // CommonMark Java Extension For Tables
-    implementation group: 'org.commonmark', name: 'commonmark-ext-gfm-tables', version: '0.25.1'
+    implementation 'org.commonmark:commonmark-ext-gfm-tables:0.25.1'
 
     // HTML Compressor and Minifier
-    implementation group: 'com.googlecode.htmlcompressor', name: 'htmlcompressor', version: '1.5.2'
+    implementation 'com.googlecode.htmlcompressor:htmlcompressor:1.5.2'
 
     // YUI Compressor
-    implementation group: 'com.yahoo.platform.yui', name: 'yuicompressor', version: '2.4.8'
+    implementation 'com.yahoo.platform.yui:yuicompressor:2.4.8'
 
     // Jsoup Java HTML Parser
-    implementation group: 'org.jsoup', name: 'jsoup', version: '1.21.2'
+    implementation 'org.jsoup:jsoup:1.22.1'
 
     // Project Lombok
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
-    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
-    testCompileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
-    testAnnotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.38'
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+    testCompileOnly 'org.projectlombok:lombok:1.18.42'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.42'
 
     // TestNG
-    testImplementation group: 'org.testng', name: 'testng', version: '7.5.1'
+    testImplementation 'org.testng:testng:7.5.1'
 }
 
 // 单元测试
@@ -60,11 +60,11 @@ test {
 }
 
 // 版本
-version = "2.0.0"
+version = "2.0.1"
 
 // 生成胖jar包
 tasks.withType(Jar) {
-    description '生成胖jar包'
+    description = '生成胖jar包'
     archiveVersion = project.version
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from sourceSets.main.output
@@ -85,7 +85,7 @@ mavenPublishing {
     configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
     pom {
         name = "api-doc"
-        description = "基于java的接口文档生成工具"
+        description = "基于java注释的接口文档生成器"
         inceptionYear = "2025"
         url = "https://github.com/dfengwei/api-doc"
         licenses {

@@ -149,6 +149,15 @@ public class SourceFileScanner {
                         }
                     }
                     belongToGroup.getApiList().add(api);
+                    ListUtil.sort(belongToGroup.getApiList(), (api1, api2) -> {
+                        if (!api1.getSequence().equals(api2.getSequence())) {
+                            // 序号不同，按序号排序
+                            return api1.getSequence() - api2.getSequence();
+                        } else {
+                            // 序号相同，按中文排序
+                            return COLLATOR.compare(api1.getName(), api2.getName());
+                        }
+                    });
                 }
             }
         }
