@@ -107,4 +107,10 @@ $(function () {
         $('#main-nav .api').removeClass("selected");
         me.addClass("selected");
     });
+
+    // 通过带锚点的url访问，菜单自动选中
+    if (location.hash) {
+        $('#main-nav .api').removeClass("selected");
+        $(`#main-nav .api[href="${location.hash}"]`).addClass('selected');
+    }
 });
