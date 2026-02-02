@@ -42,6 +42,11 @@ public class Patterns {
     private static final String API_XXX = "(?<=@api{})((.|\\n)+?)(?=\\*\\s@api|$)";
 
     /**
+     * apiDisable内容
+     */
+    public static Pattern API_DISABLE = Pattern.compile(StrUtil.format(API_XXX, "Disable"));
+
+    /**
      * apiName内容
      */
     public static Pattern API_NAME = Pattern.compile(StrUtil.format(API_XXX, "Name"));

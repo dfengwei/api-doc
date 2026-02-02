@@ -26,6 +26,12 @@ public class ApiResolver {
                 StrUtil.removeAllLineBreaks(StrUtil.subPre(api.getComment(), 80)).trim() + "...");
         }
 
+        // 解析接口是否禁用，如果禁用，则直接返回
+        ApiDisableResolver.resolve(terminal, api);
+        if (api.getDisabled()) {
+            return;
+        }
+
         // 解析接口名称（包含分组名称）
         ApiNameResolver.resolve(terminal, api);
 

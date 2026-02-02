@@ -28,6 +28,11 @@ public class Api {
     private String comment;
 
     /**
+     * 是否禁用
+     */
+    private Boolean disabled;
+
+    /**
      * 分组列表
      */
     private List<Group> groupList;

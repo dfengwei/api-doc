@@ -106,6 +106,11 @@ public class SourceFileScanner {
                     // 解析
                     ApiResolver.resolve(terminal, api);
 
+                    // 接口是否禁用
+                    if (api.getDisabled()) {
+                        continue;
+                    }
+
                     // 找到接口所属组对象，并将接口对象放入该组
                     List<Group> groupList = terminal.getGroupList();
                     Group belongToGroup = null;

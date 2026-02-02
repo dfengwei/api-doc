@@ -8,6 +8,7 @@ package com.github.dfengwei.apidoc.controller.app.system;
 public class UserController {
 
     /**
+     * @apiDisable
      * @apiName {1:系统} {1:用户} 1:详情
      * @apiAddr {GET} {POST} /api/app/system/user/get
      *
