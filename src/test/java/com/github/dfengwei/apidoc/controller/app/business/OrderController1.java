@@ -10,6 +10,7 @@ public class OrderController1 {
     /**
      * @apiName {2:业务} {2:订单} 2:详情
      * @apiAddr {GET} {POST} /api/app/business/order/get
+     * @apiDescription 获取订单详情获取订单详情获取订单详情获取订单详情获取订单详情获取订单详情获取订单详情获取订单详情获取订单详情
      *
      * @apiHeader {String} token Token
      *

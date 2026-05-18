@@ -64,6 +64,8 @@ public class HtmlGenerator {
             FileUtil.writeFromStream(ResourceUtil.getStream("template/html/assets/tailwindcss-browser.4.1.13.min.js"),
                 FileUtil.file(doc.getHtmlRendererConfig().getAbsolutePath(), "tailwindcss-browser.4.1.13.min.js")
                     .getPath());
+            FileUtil.writeFromStream(ResourceUtil.getStream("img/favicon.svg"),
+                FileUtil.file(doc.getHtmlRendererConfig().getAbsolutePath(), "favicon.svg").getPath());
         }
 
         if (Logger.isTraceEnabled()) {

@@ -19,19 +19,19 @@ java {
 
 dependencies {
     // Hutool Core
-    implementation 'cn.hutool:hutool-core:5.8.43'
+    implementation 'cn.hutool:hutool-core:5.8.44'
 
     // Hutool JSON
-    implementation 'cn.hutool:hutool-json:5.8.43'
+    implementation 'cn.hutool:hutool-json:5.8.44'
 
     // Apache FreeMarker
     implementation 'org.freemarker:freemarker:2.3.34'
 
     // CommonMark Java Core
-    implementation 'org.commonmark:commonmark:0.27.1'
+    implementation 'org.commonmark:commonmark:0.28.0'
 
     // CommonMark Java Extension For Tables
-    implementation 'org.commonmark:commonmark-ext-gfm-tables:0.25.1'
+    implementation 'org.commonmark:commonmark-ext-gfm-tables:0.28.0'
 
     // HTML Compressor and Minifier
     implementation 'com.googlecode.htmlcompressor:htmlcompressor:1.5.2'
@@ -40,13 +40,13 @@ dependencies {
     implementation 'com.yahoo.platform.yui:yuicompressor:2.4.8'
 
     // Jsoup Java HTML Parser
-    implementation 'org.jsoup:jsoup:1.22.1'
+    implementation 'org.jsoup:jsoup:1.22.2'
 
     // Project Lombok
-    compileOnly 'org.projectlombok:lombok:1.18.42'
-    annotationProcessor 'org.projectlombok:lombok:1.18.42'
-    testCompileOnly 'org.projectlombok:lombok:1.18.42'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.42'
+    compileOnly 'org.projectlombok:lombok:1.18.46'
+    annotationProcessor 'org.projectlombok:lombok:1.18.46'
+    testCompileOnly 'org.projectlombok:lombok:1.18.46'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.46'
 
     // TestNG
     testImplementation 'org.testng:testng:7.5.1'
@@ -60,7 +60,7 @@ test {
 }
 
 // 版本
-version = "2.0.4"
+version = "2.0.5"
 
 // 生成胖jar包
 tasks.withType(Jar) {

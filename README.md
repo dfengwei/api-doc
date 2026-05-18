@@ -130,7 +130,7 @@
   - 数据类型：参考`@apiHeader`
   - 字段名：参考`@apiHeader`
 
-### 文档编写示例
+## 文档编写示例
 
 ```java
 /**
@@ -209,7 +209,7 @@ compileOnly files('libs/api-doc-x.y.z.jar')
 gradlew doc
 ```
 
-## 从源码构建
+### 从源码构建
 
 ```cmd
 git clone https://github.com/dfengwei/api-doc.git
@@ -219,6 +219,6 @@ gradlew build
 # api-doc.jar位于build/libs中
 ```
 
-## maven
+### maven
 
 略（本人不太使用maven）

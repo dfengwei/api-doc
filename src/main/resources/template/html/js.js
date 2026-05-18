@@ -7,7 +7,11 @@ $(function () {
     $('#terminal-nav input:checkbox').each(function (index, element) {
         let me = $(this);
         let terminalName = me.attr('data-terminal-name');
-        newTerminalCheckedStatus[terminalName] = terminalCheckedStatus[terminalName] || 0;
+        if (terminalCheckedStatus[terminalName] === 0 ) {
+            newTerminalCheckedStatus[terminalName] = 0
+        } else {
+            newTerminalCheckedStatus[terminalName] = 1
+        }
     });
     localStorage.setItem('terminal-checked-status', JSON.stringify(newTerminalCheckedStatus));
 
